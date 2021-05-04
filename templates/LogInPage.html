@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Log In</title>
+{% endblock %}
+
+{% block body %}
+<script>
+    $(function(){
+        //runs when document has been loaded.
+        $("#register-form-id").click(function(){
+            $("#log-in").hide();
+            $("#register").show();
+            $(".current-button-2").show();
+            // $(".current-button").toggle();
+            $(".current-button").hide();
+       })
+        $("#log-in-form-id").click(function(){
+            $("#register").hide();
+            $("#log-in").show();
+            $(".current-button").show();
+            $(".current-button-2").hide();
+        })
+    })
+    </script>    
+    
+    <div class="back" src="back-image.jpg">
+        <div class="log-in-form">
+            <div class="style-buttons">
+                <div class="current-button"></div>
+                <button type="button" class="the-buttons" id="log-in-form-id">Log In</button>
+                <div class="current-button-2"></div>
+                <button type="button" class="the-buttons" id="register-form-id">Register</button>
+            </div>
+            <form id="log-in" class="input-data-class">
+                <input type="text" id="input-data-id" name="Username" placeholder="Username" required><br><br><br>
+                <input type="password" id="input-data-id" name="Pass" placeholder="Password" required><br><br><br><br>
+                <label id="checkbox-id">Remember Password
+                    <input type="checkbox">
+                </label>
+                <input type="submit" id="submit-button" value="Submit">
+            </form>
+            <form id="register" class="input-data-class">
+                <input type="text" id="input-data-id" name="Username" placeholder="Username" required><br><br><br>
+                <input type="password" id="input-data-id" name="Pass" placeholder="Password" required><br><br><br>
+                <input type="email" id="input-data-id" name="id" placeholder="Email ID" required><br><br><br><br>
+                <label id="checkbox-id-2">I agree to the terms and conditions.
+                    <input type="checkbox">
+                </label>
+                <input type="submit" id="submit-button" value="Register">
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}
