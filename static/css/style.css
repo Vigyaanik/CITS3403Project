@@ -11,6 +11,9 @@
     margin: 5% auto;
     padding: 6px;
 }
+div.card{display:inline-block;
+    background-color:"blue";
+}
 
 .style-buttons{
     width: 220px;
