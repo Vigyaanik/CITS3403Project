@@ -1,38 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Memoer Game</title>
-        <link rel="stylesheet" href="/static/styles.css">
-        <style>
-            img.Pback{
-            
-                height:100px; 
-                width:100px;
-            }
-            img.Phover{
-                position: relative;
-                display:none;
-                height:100px; 
-                width:100px;
-            }
-            div.card:hover img.Pback{
-                display:none;
-            }
-            div.card:hover img.Phover{
-                display:block;
-            }
-        </style>
+        <title>Content</title>
     </head>
     <body>
-        {%for row in range(numRows|int)%}
-        <div>
-            {%for element in range(numColls|int)%}
-            <div class="card">
-                <img class="Pback"  src=/static\images\back.jpg>
-                <img class="Phover"  src=/static\images\hover.png>
-            </div>
-            {% endfor %}
-        </div>
-        {% endfor %}
+        <h1>improve your mempory with  emotion</h1>
+        <a href="getGame/4/4/myDir/0">start game</a>
+        <h1>the mechanics of working memory and how to use it</h1>
+        <h1>remember things that stand out</h1>
+        <h1>we remember things that are meaningful</h1>
+        <h1>We remeber better thins that we saw befor</h1>
     </body>
 </html>
