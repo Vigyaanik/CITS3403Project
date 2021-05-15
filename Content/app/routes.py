@@ -1,5 +1,7 @@
+import os
 from flask import render_template
 from app import app
+from os import listdir
 
 @app.route('/')
 @app.route('/index')
@@ -14,4 +16,3 @@ def getGame(numColls,numRows,folderName,test):
     for d in os.listdir(gPath):
         images.append(os.path.join(folderName,d))
     return render_template('game.html', numColls=numColls, numRows=numRows,paths=images,test=test)
-
