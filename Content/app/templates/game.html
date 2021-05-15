@@ -24,6 +24,10 @@
         </style>
     </head>
     <body>
+        {%for picture in paths%}
+            <img src={{picture}}>
+        {%endfor%}
+        <p>{{paths}}</p>
         {%for row in range(numRows|int)%}
         <div>
             {%for element in range(numColls|int)%}
