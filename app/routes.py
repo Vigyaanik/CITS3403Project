@@ -10,7 +10,7 @@ def index():
 @app.route('/getGame/<int:numColls>/<int:numRows>/<int:time>/<string:folderName>')
 def getGame(numColls,numRows,folderName,time):
     images=[]
-    shortPath=os.path.join(r"static\images",folderName)
+    shortPath=os.path.join(r"static/images",folderName)
     path=os.path.join(r"app",shortPath)
     #path=r"C:\Users\Ron Zatuchny\CITS3403Project\Content\app\static\images\colour"
     gPath=os.path.abspath(path)
