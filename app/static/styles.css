@@ -1,23 +1,30 @@
+/* For making change in element size easier to do */
 * {
   box-sizing: border-box;
 }
-.but {
+/*.but {
+    grid-column: 2/-2;
+    display:flex;
     font-weight: normal;
     background-color:red;
     text-decoration: none;
     text-align: center;
     color:rgb(0, 153, 255);
     float:right;
-    height: 100px;
-    width: 200px;
+    height: 50px;
+    width: 50px;
     font-size: 20px;
     margin-right: 20px;
     vertical-align: middle;
-}
+}*/
+
+/* Blend background color */
 body {
     margin: 0;
     background: radial-gradient(#62A225, #625125);
   }
+
+/* Style for Page Title */
 .pageTitle {
   color: black;
   font-weight: normal;
@@ -25,11 +32,6 @@ body {
   font-size: 6em;
 }
 
-.game-info-container {
-    grid-column: 1 / -1;
-    justify-content: space-between;
-    display:flex;
-}
 a{
     display:block;
 }
@@ -38,9 +40,18 @@ a{
   color: #004900;
   font-size: 3em;
 }
-/*This style page is the main page of the project */
-/*the following section is responsible for the css of the*/
-.game-container {
+
+
+.game-info-container {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    display:flex;
+}
+
+/* This style page is the main page of the project 
+ The following section is responsible for the css of the */
+
+.game-container { 
     display:grid;
     grid-template-columns: repeat(4,auto);
     grid-gap:10px;
@@ -48,9 +59,7 @@ a{
     justify-content: center;
     perspective: 500px;
     display: block;
-
-
-}
+} 
 
 
 .card {
@@ -58,7 +67,7 @@ a{
     height: 175px;
     width: 125px;
     display:inline-block;
-}
+} 
 
 .card-face {
     position: absolute;
@@ -74,17 +83,10 @@ a{
     border-style: solid;
 
 }
+
 .card-back {
     border-color: black;
     transform: rotateY(0)
-}
-
-.card.visible .card-front {
-    transform: rotateY(0)
-
-}
-.card.visible .card-back {
-    transform: rotateY(-180deg);
 }
 
 .card-front{
@@ -105,14 +107,24 @@ a{
     transform: scale(1);
     transition: transform 100ms ease-in-out;
 }
+
+.card.visible .card-front {
+    transform: rotateY(0)
+
+}
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
 .card:hover .card-back-value {
     transform: scale(1.1);
 }
 .card:hover .card-front-value {
     transform: scale(1.1);
 }
+
 .row{
-    display:block flex ;
+    display: flex ;
     justify-content:center;
 }
 
