@@ -59,8 +59,6 @@ class MemoGame {
         }, 1000);
     }
 
-    
-
     /**
      * Function to give user the result after the game is over
      * containing time taken, number of flips, and number of pairs correct
