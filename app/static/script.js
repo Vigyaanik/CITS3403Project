@@ -31,7 +31,6 @@ class MemoGame {
          * make the transition between the game page to other page and vice versa smoothly
          */
         setTimeout(() => {
-            this.shuffleCards();
             this.countDown = this.startCountDown();
             this.busy = false;
         }, 700);
@@ -46,21 +45,6 @@ class MemoGame {
     }
 
     /**
-     * Function to shuffle the position of the cards in the array
-     * Swap the index of each card with a random index of another card in the array
-     * using the Fisher–Yates shuffle algorithm
-     */
-    /*
-    shuffleCards() { 
-        for (let i = this.cardsArray.length - 1; i > 0; i--) {
-            let randIndex = Math.floor(Math.random() * (i + 1));
-            this.cardsArray[randIndex].style.order = i;
-            this.cardsArray[i].style.order = randIndex;
-        }
-    }
-    */
-
-    /**
      * Function to return the time remaining and display on web page,
      * is called after every interval
      * also check if the game is over given the time remaining
@@ -73,6 +57,31 @@ class MemoGame {
             if(this.timeRemaining === 0)
                 this.gameOver();
         }, 1000);
+    }
+
+    
+
+    /**
+     * Function to give user the result after the game is over
+     * containing time taken, number of flips, and number of pairs correct
+     * @returns number of flips and time taken
+     */
+     gameOver() {
+        alert("You have made " + this.totalClicks + " flips\nGot " + this.matchedCards.length/2 + " pair(s) correct\nTime taken: "  + (this.totalTime - this.timeRemaining) +'s');
+        clearInterval(this.countDown);
+        this.hideCards();
+        this.busy=true;
+        return (this.totalClicks, this.totalTime - this.timeRemaining);
+    }
+
+    /**
+     * Function to display the back card face for every card
+     * by remove the visible attribute of the front card
+     */
+     hideCards() {
+        this.cardsArray.forEach(card => {
+            card.classList.remove('visible');
+        });
     }
 
     /**
@@ -97,15 +106,14 @@ class MemoGame {
     }
 
     /**
-     * Function to display the back card face for every card
-     * by remove the visible attribute of the front card
+     * Function to check if the current card can be fliped
+     * @param card the current card
+     * @returns true if can be flip, false otherwise
      */
-    hideCards() {
-        this.cardsArray.forEach(card => {
-            card.classList.remove('visible');
-        });
+     canFlipCard(card) {
+        return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck);
     }
-    
+
     /**
      * Function to check if 2 cards are the same
      * by comparing the source path of the two images that are being checked
@@ -159,28 +167,6 @@ class MemoGame {
             card2.classList.remove('visible');
             this.busy = false;
         }, 1000);
-    }
-
-    /**
-     * Function to give user the result after the game is over
-     * containing time taken, number of flips, and number of pairs correct
-     * @returns number of flips and time taken
-     */
-    gameOver() {
-        alert("You have made " + this.totalClicks + " flips\nGot " + this.matchedCards.length/2 + " pair(s) correct\nTime taken: "  + (this.totalTime - this.timeRemaining) +'s');
-        clearInterval(this.countDown);
-        this.hideCards();
-        this.busy=true;
-        return (this.totalClicks, this.totalTime - this.timeRemaining);
-    }
-
-    /**
-     * Function to check if the current card can be fliped
-     * @param card the current card
-     * @returns true if can be flip, false otherwise
-     */
-    canFlipCard(card) {
-        return (!this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck);
     }
 }
 
