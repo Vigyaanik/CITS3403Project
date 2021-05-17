@@ -1,0 +1,23 @@
+{% extends 'newbase.html' %}
+{% block head %}
+<title>Feedback</title>
+{% endblock %}
+
+{% block body %}
+<!-- {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <ul>
+    {% for msg in messages %}
+        <li>{{msg}}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %} -->
+    <style>
+        #menu4 {
+            background-color: grey;
+        }
+    </style>
+    <p>This will be our Feedback page.</p>
+    <p>{{ item_name }}</p>
+{% endblock %}

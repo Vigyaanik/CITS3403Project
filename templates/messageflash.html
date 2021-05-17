@@ -26,6 +26,7 @@
         })
     })
     </script>    
+
     <div class="back" src="back-image.jpg">
         <div class="log-in-form">
             <div class="style-buttons">
@@ -33,6 +34,15 @@
                 <button type="button" class="the-buttons" id="log-in-form-id">Log In</button>
                 <div class="current-button-2"></div>
                 <button type="button" class="the-buttons" id="register-form-id">Register</button>
+            </div>
+            <div class="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <a style="position: center; margin-left: 100px; margin-top: 0px; text-decoration: solid; font-size: small; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: red;">{{msg}}</a>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
             </div>
             <form id="log-in" class="input-data-class" method="POST" action="/login_validation">
                 <input type="text" id="input-data-id" name="Username" placeholder="Username" required><br><br><br>
@@ -43,7 +53,7 @@
             <form action = "/login" METHOD="POST" id="register" class="input-data-class">
                 <input type="text" id="input-data-id" name="Username" placeholder="Username" required><br><br><br>
                 <input type="password" id="input-data-id" name="Pass" placeholder="Password" required><br><br><br>
-                <input type="email" id="input-data-id" name="id" placeholder="Email ID" required><br><br><br><br>
+                <input type="email" id="input-data-id" name="id" placeholder="Email ID" required><br><br><br>
                 <input type="submit" id="submit-button" value="Register">
             </form>
         </div>
