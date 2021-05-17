@@ -2,21 +2,30 @@
 * {
   box-sizing: border-box;
 }
-/*.but {
-    grid-column: 2/-2;
-    display:flex;
+
+/* style for back button */
+.but {
     font-weight: normal;
-    background-color:red;
+    background: radial-gradient(#62A225, #625125);
     text-decoration: none;
     text-align: center;
-    color:rgb(0, 153, 255);
-    float:right;
-    height: 50px;
-    width: 50px;
+    color:black;
+    height: 30px;
+    width: 100px;
     font-size: 20px;
     margin-right: 20px;
     vertical-align: middle;
-}*/
+    border-color: black;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+} 
+
+/* For moving card to the center of the page */
+.row{
+    display: flex;
+    justify-content:center;
+}
 
 /* Blend background color */
 body {
@@ -32,15 +41,16 @@ body {
   font-size: 6em;
 }
 
+/* Block display for back button */
 a{
     display:block;
 }
 
+/* Time and FLips style */
 .game-info {
-  color: #004900;
+  color: black;
   font-size: 3em;
 }
-
 
 .game-info-container {
     grid-column: 1 / -1;
@@ -48,24 +58,11 @@ a{
     display:flex;
 }
 
-/* This style page is the main page of the project 
- The following section is responsible for the css of the */
-
-.game-container { 
-    display:grid;
-    grid-template-columns: repeat(4,auto);
-    grid-gap:10px;
-    margin: 50px;
-    justify-content: center;
-    perspective: 500px;
-    display: block;
-} 
-
-
+/* style for every card */
 .card {
     position:relative;
-    height: 175px;
-    width: 125px;
+    height: 170px;
+    width: 130px;
     display:inline-block;
 } 
 
@@ -78,36 +75,38 @@ a{
     align-items:center;
     overflow: hidden;
     backface-visibility: hidden;
-    border-radius: 12px;
-    border-width: 1px;
+    border-radius: 15px;
+    border-width: 1.5px;
     border-style: solid;
 
 }
-
+/* Style for card back */
 .card-back {
     border-color: black;
     transform: rotateY(0)
 }
 
+/* Style for card front */
 .card-front{
     border-color:black;
     transform: rotateY(180deg);
 }
 .card-front-value {
     position:relative;
-    height:175px;
-    width:125px;
+    height:170px;
+    width:130px;
     transform: scale(1);
     transition: transform 100ms ease-in-out;
 }
 .card-back-value {
     position:relative;
-    height:175px;
-    width:125px;
+    height:170px;
+    width:130px;
     transform: scale(1);
     transition: transform 100ms ease-in-out;
 }
 
+/* Responsible for making the card appear */
 .card.visible .card-front {
     transform: rotateY(0)
 
@@ -116,6 +115,7 @@ a{
     transform: rotateY(-180deg);
 }
 
+/* Responsible for the animation when hovering on the card */
 .card:hover .card-back-value {
     transform: scale(1.1);
 }
@@ -123,19 +123,12 @@ a{
     transform: scale(1.1);
 }
 
-.row{
-    display: flex ;
-    justify-content:center;
-}
-
 /* Mobile friendly version*/
-@media (max-width: 600px) {
-    .game-container {
-      grid-template-columns: repeat(2, auto)
-    }
-    .game-info-container {
-      flex-direction: column;
-      align-items: center;
+@media (max-width: 700px) {
+    .row{
+        display: grid;
+        justify-content:center;
+        grid-template-columns: repeat(2, auto)
     }
 }
   
