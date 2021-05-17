@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--the title of the html page-->
+        <title>Memoer Game</title>
+            <!--link to a script and styles file-->
+            <link rel="stylesheet" href="/static/styles.css">
+            <script src="/static/script.js" async></script>
+            <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 class="pageTitle">Memory Game</h1>
+        <!--This div is a container for the C--> 
+        <div class="game-info-container">
+        <!-- This div responsible for displaying the time remaining till the game is over-->
+            <div class="game-info">
+                <b>Time</b> <span id="time-remaining">100</span>
+            </div>
+            <!--This div is responsible for displaying the time remaining and total of flips -->
+            <div class="game-info">
+                <b>Flip</b> <span id="flips">0</span>
+            </div>
+        </div>    
+            
+        
+        <!--the following div represents the grid-->
+        <div>
+        <!--The following loop is executed numRows times, each time creating a row in the grid-->
+        {% for row in range(numRows|int)%} 
+        <!--the  following div represents a single row in the grid-->
+        <div class= 'row'>
+            <!--The following loop is executed numColls times, each time creating a single card in the grid-->
+            {% for element in range(numColls|int)%}
+            <!--The following div is representing a single card element-->
+            <div class='card'>
+                <!--the following div represents the back side of a card-->
+                <div class='card-back card-face'>
+                  <img class='card-back-value' src='/static/images/hover.png' alt="back">
+                </div>
+                <!--the following div represents the front side of a card-->
+                <div class='card-front card-face'>
+                  <img class='card-front-value' src="/{{ paths[row*numColls|int+element]}}" alt="front">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        </div>
+        <a class="but" id="back" href="/"><b>Back</b></a>
+    </body>
+</html>
