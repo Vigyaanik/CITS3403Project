@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="NavigationBar.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--navigation bar items, last item being the icon for smaller screen,if 
+        you add or delete from here you have to change the max-width in stylesheet-->
+        <div class="navBar" id="navID">
+            <a href="/home" class="active">HOME</a>
+            <a href="/contents">CONTENT</a>
+            <a href="/statistics">STATISTICS</a>
+            <a href="/feedback">FEEDBACK</a>
+            <a href="/login">LOGIN</a>
+            <a href="/logout">LOGOUT</a>
+            <a href="javascript:void(0);" class="icon" onclick="click_menu()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+          <!--function for vertical nav bar-->
+          <script>
+          function click_menu() {
+            var x = document.getElementById("navID");
+            if (x.className === "navBar") {
+              x.className += " responsive";
+            } else {
+              x.className = "navBar";
+            }
+          }
+          </script>
+        <!--Main text-->
+        <div class = "text">
+
+            <h2 class = "heading">
+                <img class = "image" src="brain.png" width = "100" height="auto"> MEMORY 
+            </h2>
+            <p1>
+                <br>
+                In an age where information is so easily accessable, we dont often have the need to remember 
+                much information
+                as at any point we can just search on the internet for 
+                whatever we want.  
+                <br><br>
+                What many people don't realise is that besides making you more knowledgeable,
+                having a good memory has also shown to improve:
+                <div class = "list">
+                    <ul>
+                        <li>Social Skills</li>
+                        <li>Ability to Learn</li>
+                        <li>Humour</li>
+                        <li>Attention</li>
+                        <li>Creativity</li>
+                    </ul> 
+                </div>
+                The world record for most random objects memorized is held by 
+                Nischal Narayanam who set the record at just 10 years old. Whilst we
+                can't all be the next Nischal Narayanam, we can learn ways to help us remember 
+                information better. 
+                <br><br>
+                This site will teach you about some of the factors that effect memory and has some 
+                games to help demonstrate each of these.
+                <br><br>
+            </p1>
+
+                After completing the content and the games, you will have a greater understanding
+                of how memory works, how to remember information better and communicate memorable
+                information. 
+                <a href="loginurl" class="link">Register/Login</a> to have your progress tracked and head over to the 
+                <a href="contenturl" class="link">content</a> page to begin. 
+            </p2>
+        </div>
+
+        <!--the gives the orange band at the bottom of the page-->
+        <h1 class = "bottom"><br><br></h1>
+    </body>
+</html>
