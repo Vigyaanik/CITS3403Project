@@ -6,6 +6,5 @@ class Users(db.Model):
     email = db.Column(db.String(length=100), unique=True, nullable=False)
     password = db.Column(db.String(length=256), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
-
     def __repr__(self):
         return '<Users {}>'.format(self.username)
