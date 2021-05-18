@@ -80,9 +80,14 @@ class MemoGame {
         /*card1.classList.add('matched');
         card2.classList.add('matched');*/
     
-        if(this.matchedCards.length === this.cardsArray.length)
+        if(this.matchedCards.length === this.cardsArray.length){
+            if(this.cardsArray.length==30){
+                document.getElelentByClassName("update")[0].text="submit and go to home page";
+                document.getElementsByClassName("update")[0].href="/update/"+this.totalClicks;
+            }
             this.gameOver();
-    }
+            
+    }}
 
     cardMismatch(card1, card2) {
         this.busy = true;
@@ -113,7 +118,7 @@ class MemoGame {
 
 function ready() {
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MemoGame(100, cards);
+    let game = new MemoGame(300, cards);
 
     game.startGame();
 
