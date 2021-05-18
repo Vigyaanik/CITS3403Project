@@ -9,3 +9,9 @@ class Users(db.Model):
 
     def __repr__(self):
         return '<Users {}>'.format(self.username)
+class Progress(db.Model):
+    id = db.Column(db.Integer,primary_key=True)
+    username = db.Column(db.String(length=50), nullable=False)
+    numFlips=db.Column(db.Integer())
+    def __repr__(self):
+        return '<Progress  %r>'% self.id
