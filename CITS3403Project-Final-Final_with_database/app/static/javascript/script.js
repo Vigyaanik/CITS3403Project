@@ -143,12 +143,11 @@
         this.matchedCards.push(card1);
         this.matchedCards.push(card2);
 
-        if(this.matchedCards.length === this.cardsArray.length)
-        if(this.cardsArray.length==4){
+        if(this.matchedCards.length === this.cardsArray.length) {
+            this.gameOver();
             document.getElementsByClassName("update")[0].text="submit and go to home page";
             document.getElementsByClassName("update")[0].href="/update/"+this.totalClicks;
         }
-            this.gameOver();
     }
 
     /**
