@@ -23,6 +23,9 @@ Successful login takes you to the home page. Here you can read about the website
 
 The Content page has both content and assignments for the game. Here you can play the game. The top player records are stored on the website using a databse for everyone to see. The Feedback page gives you a feedback on your score. The Statistics page has statistics for the game using a plot.
 
-The Unit tests for this project currently include a login tester to check whether a user can successfully log in or not. Checks whether the password is working or not by comparing the hashes. To run the unit test you will need to install selenium in your working directory. Use the command python -m test.unit to run the tests. You must have a matching version for chrome and chrome driver to run the tests and the chrome driver should be present in the same directory as your testdb.py file.
+This Project also includes unit tests, tests created from Selenium IDE and Selenium tests implemented using chrome. To run the selenium tests:
+Install Selenium: pip install selenium
+Have the mathing chrome browser as your chrome version in the same directory as the testing files.
+
 
 This project also uses downloaded jquery. 
