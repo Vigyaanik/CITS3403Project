@@ -1,0 +1,107 @@
+{% extends 'newbase.html' %}
+{% block head %}
+<title>Feedback</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+<!-- {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <ul>
+    {% for msg in messages %}
+        <li>{{msg}}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %} -->
+    <div class="text">     
+    <h class="heading">Feedback</h>
+    <p>
+        <p class="memoryhead">Level 1, Level 2 and Level 3</p>
+        <table class="table">
+            <thead>
+              <tr class="link">
+                <th>Rounds</th>
+                <th>Ranking</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody> 
+                <tr class="info">
+                    <td>5+ rounds</td>
+                    <td>Impossible</td>
+                    <td>You cannot finish 5 or more rounds in 60 flips, if you 
+                        have finished 4 rounds you have completed the game. You
+                        can test yourself and see how close to 30 matches you get in round
+                        5 but never complete it.
+              <tr class="success">
+                <td>4 Rounds</td>
+                <td>Excellent</td>
+                <td>You have an excellent memory, it is quite a challenge to finish this round. 
+                    With 60 flips this ranking is 
+                    acheivable even with the worst luck possible. If your first 20 flips 
+                    are all non-matches, you can still complete this level with a perfect
+                    memory and all matches. 
+                </td>
+              </tr>
+              <tr class="warning">
+                <td>Level 3</td>
+                <td>Average</td>
+                <td>Most people are able to complete this level within 60 flips. If you 
+                    couldnt finish this level the first time you should practice some more
+                    as it is acheivable for all.
+                </td>
+              <tr class="danger">
+                <td>Level 2</td>
+                <td>Below Average</td>
+                <td>You have a below average memory and should practice more.
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+          <p class="memoryhead">Level 4</p>
+          <table class="table">
+              <thead>
+                <tr class="link">
+                  <th>Rounds</th>
+                  <th>Ranking</th>
+                  <th>Comments</th>
+                </tr>
+              </thead>
+              <tbody> 
+                <tr class="info">
+                    <td>5+ rounds</td>
+                    <td>Impossible</td>
+                    <td>You cannot finish 5 or more rounds in 60 flips, if you 
+                        have finished 4 rounds you have completed the game. You
+                        can test yourself and see how close to 30 matches you get in round
+                        5 but never complete it.
+                    </td>
+                </tr>
+                <tr class="defult">
+                  <td>4 Rounds</td>
+                  <td>Insane</td>
+                  <td>This is extremely impressive as the similar images make it 
+                      very difficult to remember specific tiles.
+                  </td>
+                </tr>
+                <tr class="success">
+                  <td>Level 3</td>
+                  <td>Excellent</td>
+                  <td>Even this is quite the challenge, if you are able to finish this 
+                      you have done very well.
+                  </td>
+                <tr class="warning">
+                  <td>Level 2</td>
+                  <td>Average</td>
+                  <td>This is an average score for this challenging game. If you practice
+                      you should be able to finish level 3. 
+                  </td>
+  
+                </tr>
+              </tbody>
+            </table>
+    </p>
+    </div>
+{% endblock %}
