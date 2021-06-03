@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--the title of the html page-->
+        <title>404 Page</title>
+    </head>
+<body>
+    <style> 
+        body {  background-image: url("/static/images/404.jpg");
+                margin-top:  50px; 
+                margin-left: 50px}
+    </style>
+    <h1>404 Error</h1>
+    <p>The page you're looking for doesn't exist</p>
+    <p><a href="{{ url_for('homepage') }}">Back</a></p>
+</body>
